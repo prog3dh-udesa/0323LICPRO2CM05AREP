@@ -1,0 +1,14 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+    <h1>Bienvenido a mi consesionario <%= nombreAuto %></h1>
+    <ul>
+        <% 
+            let arr = ['Nelson', 'Lucho', 'Gabi']
+            for(let i=0;i < arr.length; i++){ %> 
+        <li>Tu nombre es <%= arr[i]%> </li>
+        <%}%>
+    </ul>
+    ejs
+    
+</body>
+</html>
