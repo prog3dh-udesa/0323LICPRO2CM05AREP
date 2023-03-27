@@ -6,19 +6,19 @@ const controlador = {
         res.render(
             'autos', 
             {
-                titulo:'Consecionario',
+                titulo:'Concesionario Mcqueen',
                 nombreConcesionario: 'Rayo Mcqueen',
                 autos: listaAutos
             }
         )
     },
-    porIndice:function(req, res){
+    porDetalle:function(req, res){
         let indice = req.params.indice
         res.render(
-            'product',
+            'detalle',
             {
                 titulo:listaAutos[indice].marca + ' ' + listaAutos[indice].modelo,
-                auto:listaAutos[indice]
+                auto: listaAutos[indice]
             }
         )
     },
@@ -30,17 +30,14 @@ const controlador = {
                     filtradosPorColor.push(listaAutos[i])
                 }
             }
+        
             if(filtradosPorColor.length > 0){
                 res.send(filtradosPorColor)
             } else {
                 res.send('De ese color no tenemos')
             }
         } else {
-            //[red, black, yellow]
-            let colores = {}
-            for(let i = 0; i < listaAutos.length; i++){
-                colores[listaAutos[i].color] = colores[listaAutos[i].color]++
-            }
+            res.render('color')
         }
     },
     porMarca: function(req, res){

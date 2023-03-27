@@ -10,10 +10,11 @@ a {
 .lista-autos{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
+
 .lista-autos .item{
-  width:20%;
-  min-width: 8rem;
-  max-width:10rem;
-  margin-right: 2rem;
+  width: 20%;
+  min-width: 5rem;
+  max-width: 8rem;
 }

@@ -1,0 +1,22 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+    <h1>Bienvenido al consesionario <%= nombreConcesionario %></h1>
+    <h2>Estos son los autos que tenemos</h2>
+    <ul class="lista-autos">
+        <%
+            for(let i = 0; i < autos.length; i++){
+        %>
+            <li class="item">
+                <article>
+                    <h3><%= autos[i].marca + ' ' + autos[i].modelo %></h3>
+                    <p>Color: <%= autos[i].color %></p>
+                    <p>Año: <%= autos[i].anio %></p>
+                    <a href="/autos/detalle/<%= i%>">Ver mas</a>
+                </article>
+            </li>
+
+        <%
+            }
+        %>
+    </ul>
+<%- include('./partials/footer') %>
