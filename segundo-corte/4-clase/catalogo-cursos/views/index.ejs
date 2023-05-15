@@ -1,0 +1,20 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+<main>
+    <section>
+        <img src="/images/banner.jpg">
+    </section>
+    <section >
+        <ul>
+            <% for(let i= 0; i < movies.length; i++){%>
+            <li>
+                <a href="/movies/<%-movies[i].id%>">
+                    <h3><%= movies[i].title %></h3>
+                </a>
+                <p><%= movies[i]?.['generos.name'] %></p>
+            </li>
+            <%}%>
+        </ul>
+    </section>
+</main>
+<%- include('./partials/footer') %>

@@ -1,0 +1,10 @@
+header{
+    display: flex;
+}
+header img{
+    max-width: 50px;
+}
+
+.courses{
+    display: flex;
+}

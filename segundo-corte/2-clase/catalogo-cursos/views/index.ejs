@@ -1,0 +1,18 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+<main>
+    <section>
+        <img src="/images/banner.jpg">
+    </section>
+    <section class="courses">
+        <% for(let i= 0; i < peliculas.length; i++){%>
+            <a href="/peliculas/<%= peliculas[i].id%>">
+                <article>
+                    <!-- <img src=<%=//courses[i].imgUrl%> > -->
+                    <h3><%= peliculas[i].title %></h3>
+                </article>
+            </a>
+        <%}%>
+    </section>
+</main>
+<%- include('./partials/footer') %>

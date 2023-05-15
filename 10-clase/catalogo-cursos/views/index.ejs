@@ -1,0 +1,18 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+<main>
+    <section>
+        <img src="/images/banner.jpg">
+    </section>
+    <section class="courses">
+        <% for(let i= 0; i < courses.length; i++){%>
+        <article>
+            <img src=<%=courses[i].imgUrl%> >
+            <h3><%= courses[i].nombre %></h3>
+            <p><%= courses[i].descripcion %></p>
+            <p><%= courses[i].precio %></p>
+        </article>
+        <%}%>
+    </section>
+</main>
+<%- include('./partials/footer') %>
