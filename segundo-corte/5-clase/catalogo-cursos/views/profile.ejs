@@ -1,0 +1,23 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+
+
+<section>
+    <article>
+        <div>
+            <h1>Perfil</h1>
+        </div>
+        <h1>Nombre del usuario</h1>
+        <p>Descripción del curso</p>
+        <div>
+            <a href="/users/edit-profile/<%= data.id%>">Editar perfil</a>
+        </div>
+        <div>
+            <form method="post" action="/users/delete/<%= data.id%>">
+                <input type="submit" value="Eliminar cuenta">
+            </form>
+        </div>
+    </article>
+</section>
+
+<%- include('./partials/footer') %>

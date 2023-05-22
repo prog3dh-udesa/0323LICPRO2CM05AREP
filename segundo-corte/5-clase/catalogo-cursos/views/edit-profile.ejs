@@ -1,0 +1,21 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+
+
+<section>
+    <h1>Editar mi perfil</h1>
+    <form action="/users/edit-profile/<%= data.id%>" method="POST">
+        <div>
+            <input name="name" value="<%=data.name%>" type="text">
+        </div>
+        <div>
+            <input name="email" value="<%= data.email%>" type="text">
+        </div>
+        <button>
+            Editar
+        </button>
+    </form>
+
+</section>
+
+<%- include('./partials/footer') %>

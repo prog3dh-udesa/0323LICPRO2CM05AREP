@@ -1,0 +1,17 @@
+<%- include('./partials/head')%>
+<%- include('./partials/header')%>
+    <main>
+        <%if(obtuvimosResultados){%>
+        <h2>Los resultados de tu busqueda <b>"<%= loQueBuscoElUsuario %>"</b> son:</h2>
+        <ul>
+            <% for(let i = 0; i < resultados.length; i++){%>
+                <li>
+                    <%= resultados[i].title %>
+                </li>
+            <% } %>
+        </ul>
+        <%} else {%>
+            <h1>Lo sentimos, no tenemos la pelicula que buscas</h1>
+        <%}%>
+    </main>
+<%- include('./partials/footer')%>

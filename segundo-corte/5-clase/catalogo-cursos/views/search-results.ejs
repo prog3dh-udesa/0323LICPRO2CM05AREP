@@ -1,0 +1,17 @@
+<%- include('./partials/head')%>
+<%- include('./partials/header')%>
+
+<main>
+    <% if(encontroResultados){%>
+    <h1>Estos son los resultados de tu busqueda "<%= busqueda %>"</h1>
+    <ul>
+        <%for(let i = 0; i < resultados.length ; i++){%>
+            <li><%= resultados[i].title%></li>
+        <%}%>
+    </ul>
+    <%} else {%>
+        <h1>No se encontro lo que buscas</h1>
+    <%}%>
+</main>
+
+<%- include('./partials/footer')%>

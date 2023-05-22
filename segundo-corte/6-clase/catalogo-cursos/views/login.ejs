@@ -1,0 +1,22 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+
+<section>
+    <form action="./login.html" method="POST">
+        <div>
+            <input type="text" placeholder="Digita tu email">
+        </div>
+        <div>
+            <input type="text" placeholder="Digita tu contraseña">
+        </div>
+        <button>
+            Registrarme
+        </button>
+    </form>
+    <p>
+        ¿Aun no tienes una cuenta?
+        <a href="/users/register">Crear cuenta</a>
+    </p>
+</section>
+
+<%- include('./partials/footer') %>

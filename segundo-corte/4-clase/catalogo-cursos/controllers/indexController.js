@@ -6,16 +6,17 @@ const controller = {
     index: function(req, res){
         db.Movies.findAll({
             raw: true,
-            nested:true,
+            nest:true,
             include:[
-                {association: 'generos'}
+                {association: 'generos'},
+                {association: 'actores'}
             ]
         })
         .then(function(data){
             console.log(data)
             res.render('index', {
                 movies: data,
-                usuarioLogueado: false
+                usuarioLogueado: true
             })
             
         })

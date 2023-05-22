@@ -5,6 +5,12 @@ header img{
     max-width: 50px;
 }
 
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
 .courses{
     display: flex;
 }

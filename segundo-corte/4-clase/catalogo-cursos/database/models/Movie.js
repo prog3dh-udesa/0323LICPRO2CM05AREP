@@ -10,6 +10,13 @@ module.exports =  function(sequelize, dataTypes){
         },
         rating:{
             type: dataTypes.DECIMAL
+        },
+        release_date:{
+            type: dataTypes.DATE,
+            allowNull:false
+        },
+        length:{
+            type: dataTypes.INTEGER
         }
     }
 
@@ -25,6 +32,14 @@ module.exports =  function(sequelize, dataTypes){
         Movies.belongsTo(models.Generos, {
             as:'generos',
             foreignKey:'genre_id'
+        })
+
+        Movies.belongsToMany(models.Actors, {
+            as: 'actores',
+            through: 'actor_movie',
+            foreignKey:'movie_id',
+            otherKey: 'actor_id',
+            timestamps:false
         })
     }
 

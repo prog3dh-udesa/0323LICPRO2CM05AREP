@@ -1,0 +1,32 @@
+<header>
+    <img src="/images/logo.png" >
+    <form action="/movies/search-results" method="GET">
+        <input name="busqueda" type="text" placeholder="Buscar cursos">
+        <button>Buscar</button>
+    </form>
+    <%if(usuarioLogueado === true) {%>
+        <nav>
+            <div>
+                <a href="/">Home</a>
+                <a href="/movies/add-movie">Anhadir pelicula</a> 
+            </div>
+            <div>
+                <a href="./profile.html">El nombre de mi usuario</a>
+                <form action="" method="POST">
+                    <button>Cerrar sesión</button>
+                </form>
+            </div>
+    
+        </nav>
+    <%} else {%>
+        <nav>
+            <div>
+                <a href="/">Home</a>
+            </div>
+            <div>
+                <a href="/users/login">Iniciar sesión</a>
+                <a href="/users/register">Registrarse</a>
+            </div>
+        </nav>
+    <% } %>
+</header>

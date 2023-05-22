@@ -1,0 +1,30 @@
+<%- include('./partials/head')%>
+<%- include('./partials/header')%>
+
+<main>
+    <form action="/movies/add-movie/create" method="POST">
+        <div>
+            <input name="title" type="text" placeholder="Digita el titulo de la pelicula">
+        </div>
+        <div>
+            <input name="release_date" type="date" placeholder="">
+        </div>
+        <div>
+            <input name="rating" type="number" placeholder="">
+        </div>
+        <div>
+            <select name="genre_id">
+                <option value="0">Selecciona el genero de la pelicula</option>
+                <option value="1">Comedia</option>
+                <option value="2">Terror</option>
+                <option value="3">Drama</option>
+                <option value="4">Accion</option>
+            </select>
+        </div>
+        <div>
+            <input  type="submit" placeholder="Crear pelicula">
+        </div>
+    </form>
+</main>
+
+<%- include('./partials/footer')%>

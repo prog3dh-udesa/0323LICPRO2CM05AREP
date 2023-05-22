@@ -2,15 +2,15 @@
 <%- include('./partials/header') %>
 
 <section>
-    <form action="" method="POST">
+    <form action="/users/register" method="POST">
         <div>
-            <input type="text" placeholder="Digita tu nombre">
+            <input name='nombre' type="text" placeholder="Digita tu nombre">
         </div>
         <div>
-            <input type="text" placeholder="Digita tu email">
+            <input name='email' type="text" placeholder="Digita tu email">
         </div>
         <div>
-            <input type="text" placeholder="Digita tu contraseña">
+            <input name="password" type="text" placeholder="Digita tu contraseña">
         </div>
         <button>
             Registrarme
