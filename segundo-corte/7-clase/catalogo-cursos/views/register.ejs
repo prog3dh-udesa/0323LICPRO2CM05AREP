@@ -2,7 +2,10 @@
 <%- include('./partials/header') %>
 
 <section>
-    <form action="/users/login" method="POST">
+    <form action="/users/register" method="POST">
+        <div>
+            <input name="name" type="text" placeholder="Digita tu nombre">
+        </div>
         <div>
             <input name="email" type="text" placeholder="Digita tu email">
         </div>
@@ -14,8 +17,8 @@
         </button>
     </form>
     <p>
-        ¿Aun no tienes una cuenta?
-        <a href="/users/register">Crear cuenta</a>
+        ¿Ya tienes una cuenta?
+        <a href="/users/login">Inicia sesión</a>
     </p>
 </section>
 

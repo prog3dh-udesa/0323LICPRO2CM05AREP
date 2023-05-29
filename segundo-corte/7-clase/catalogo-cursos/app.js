@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session')
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let moviesRouter = require('./routes/movies')
@@ -21,24 +22,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use( session({
-  secret:'Aqui vamos a cargar un secret',
+app.use(session({
+  secret:'Este es mi secreto',
   resave:false,
-  saveUninitialized:false
-}) )
+  saveUninitialized: false
+}))
 
 app.use(function(req, res, next){
-  console.log(req.session)
-  res.locals.usuarioLogueado = {
-    prueba: 'prueba'
+  console.log(req.cookies.rememberMe)
+  
+  if(req.session.user !== undefined){
+    res.locals.isLogged = true
+    res.locals.user = req.session.user
+  } else {
+    res.locals.isLogged = false
   }
-
-  next()
+  
+  return next()
 })
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/movies', moviesRouter)
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -4,8 +4,6 @@ const op = db.Sequelize.Op
 
 const controller = {
     index: function(req, res){
-        console.log('lo recupero desde el login')
-        console.log(req.session.prueba)
         db.Movies.findAll({
             raw: true,
             nest:true,
@@ -57,6 +55,10 @@ const controller = {
         // })
 
         
+    },
+    logout: function(req, res){
+        req.session.user = undefined
+        res.redirect('/')
     }
 }
 

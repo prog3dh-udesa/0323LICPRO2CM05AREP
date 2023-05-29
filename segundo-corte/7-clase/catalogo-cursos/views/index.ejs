@@ -8,7 +8,7 @@
         <ul>
             <% for(let i= 0; i < movies.length; i++){%>
             <li>
-                <a href="/movies/details/<%-movies[i].id%>">
+                <a href="/movies/detalle/<%-movies[i].id%>">
                     <h3><%= movies[i].title %></h3>
                 </a>
                 <p><%= movies[i]?.generos.name %></p>

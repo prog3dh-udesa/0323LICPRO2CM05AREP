@@ -1,0 +1,35 @@
+<header>
+    <img src="/images/logo.png" >
+    <form action="/movies/search-results" method="GET">
+        <input name="busqueda" type="text" placeholder="Buscar cursos">
+        <button>Buscar</button>
+    </form>
+    <%if(isLogged) {%>
+        <nav>
+            <div>
+                <a href="/">Home</a>
+                <a href="/movies/add-movie">Anhadir pelicula</a> 
+            </div>
+            <div>
+                <h1>
+                    Buen día
+                    <a href="/users/profile"><%= user.name%></a>
+                </h1>
+                <form action="/" method="POST">
+                    <button>Cerrar sesión</button>
+                </form>
+            </div>
+    
+        </nav>
+    <%} else {%>
+        <nav>
+            <div>
+                <a href="/">Home</a>
+            </div>
+            <div>
+                <a href="/users/login">Iniciar sesión</a>
+                <a href="/users/register">Registrarse</a>
+            </div>
+        </nav>
+    <% } %>
+</header>
